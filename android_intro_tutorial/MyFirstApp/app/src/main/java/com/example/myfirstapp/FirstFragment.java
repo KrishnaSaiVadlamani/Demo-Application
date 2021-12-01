@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.Navigation;
 
 import com.example.myfirstapp.databinding.FragmentFirstBinding;
 
@@ -26,25 +26,20 @@ public class FirstFragment extends Fragment {
     ) {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
-
         showCountTextView=binding.textviewFirst;
-
         return binding.getRoot();
 
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         binding.randomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int currentCount = Integer.parseInt(showCountTextView.getText().toString());
-                FirstFragmentDirections.action_FirstFragment_to_SecondFragment action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(currentCount);
-                NavHostFragment.findNavController(FirstFragment.this).navigate(action);
-
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                Integer currentCount = Integer.parseInt(showCountTextView.getText().toString());
+                Bundle bundle = new Bundle();
+                bundle.putInt("currentCount", currentCount);
+                Navigation.findNavController(view).navigate(R.id.SecondFragment, bundle);
             }
         });
         binding.toastButton.setOnClickListener(new View.OnClickListener() {
@@ -77,5 +72,4 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

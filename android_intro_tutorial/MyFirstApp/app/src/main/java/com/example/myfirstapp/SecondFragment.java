@@ -12,11 +12,15 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.myfirstapp.databinding.FragmentSecondBinding;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
+
+    private TextView randomViewHeader;
+
+    private TextView randomViewText;
 
     @Override
     public View onCreateView(
@@ -25,27 +29,23 @@ public class SecondFragment extends Fragment {
     ) {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
+        randomViewHeader = binding.textviewHeader;
+        randomViewText = binding.textviewRandom;
         return binding.getRoot();
 
     }
 
+    private void setRandomViewHeader(TextView randomViewHeader, int limit){
+        String headerStringFormat = randomViewHeader.getText().toString();
+        String header = String.format(headerStringFormat,limit);
+        randomViewHeader.setText(header);
+    }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        Integer count = SecondFragmentArgs.fromBundle(getArguments()).getMyArg();
-        String countText = getString(R.string.random_heading, count);
-        TextView headerView = view.getRootView().findViewById(R.id.textview_header);
-        headerView.setText(countText);
-
-        Random random = new java.util.Random();
-        Integer randomNumber = 0;
-        if (count > 0) {
-            randomNumber = random.nextInt(count + 1);
-        }
-
-        TextView randomView = view.getRootView().findViewById(R.id.textview_random);
-        randomView.setText(randomNumber.toString());
-
+        Integer limit = this.getArguments().getInt("currentCount");
+        setRandomViewText(randomViewText,limit);
+        setRandomViewHeader(randomViewHeader,limit);
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,9 +53,12 @@ public class SecondFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
-
     }
 
+    private void setRandomViewText(TextView randomViewText, int limit){
+        Integer randomInteger = ThreadLocalRandom.current().nextInt(0,limit);
+        randomViewText.setText(String.valueOf(randomInteger));
+    }
 
     @Override
     public void onDestroyView() {

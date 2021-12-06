@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.myfirstapp.databinding.FragmentFirstBinding;
 
@@ -42,10 +43,10 @@ public class FirstFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.SecondFragment, bundle);
             }
         });
-        binding.toastButton.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.toast_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast myToast=Toast.makeText(getActivity(),"Hello Toast!", Toast.LENGTH_SHORT);
+                Toast myToast = Toast.makeText(getActivity(), "Hello toast!", Toast.LENGTH_SHORT);
                 myToast.show();
             }
         });

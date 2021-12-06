@@ -56,7 +56,10 @@ public class SecondFragment extends Fragment {
     }
 
     private void setRandomViewText(TextView randomViewText, int limit){
-        Integer randomInteger = ThreadLocalRandom.current().nextInt(0,limit);
+        Integer randomInteger = 0;
+        if(limit>0){
+            randomInteger= ThreadLocalRandom.current().nextInt(0,limit);
+        }
         randomViewText.setText(String.valueOf(randomInteger));
     }
 

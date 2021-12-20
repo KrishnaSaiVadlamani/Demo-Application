@@ -1,0 +1,77 @@
+{
+    "smss": [
+        {
+            "UserSms": [
+                {
+                    "address": "VM-HPGASd",
+                    "MessageText": "HPGas refill delivered on 18-12-2021 CashMemo no.1672299. Use HPPAY APP for Refill booking and payment. Download- https://appurl.io/hqsMo3F_y",
+                    "Date": "1639830543574"
+                },
+                {
+                    "address": "VM-HPGASc",
+                    "MessageText": "HPGas BkngNo  CashMemo1672299 Dt 16-12-2021 Rs.952.Delivery OTP 8474.Use HPPAY APP for Refill booking and payment. https://appurl.io/hqsMo3F_y",
+                    "Date": "1639654163759"
+                },
+                {
+                    "address": "VM-HPGASa",
+                    "MessageText": "HPGas Bkng 528259 Con 861049,16-12-2021 13:16:57 Delivery OTP 8474.Use HPPAY APP for Refill booking and payment.Download- https://appurl.io/hqsMo3F_y",
+                    "Date": "1639640827134"
+                }
+            ]
+        },
+        {
+            "UserSms": [
+                {
+                    "address": "9966667444",
+                    "MessageText": "I'm gng out",
+                    "Date": "1639940457661"
+                },
+                {
+                    "address": "7658946464",
+                    "MessageText": "What'suppp Mowa Vru",
+                    "Date": "1639718352860"
+                },
+                {
+                    "address": "9550220745",
+                    "MessageText": "Hola",
+                    "Date": "1639716728702"
+                }
+            ]
+        },
+        {
+            "UserSms": [
+                {
+                    "address": "VM-KMITEC",
+                    "MessageText": "Dear Student your here by inform that Netra is available at http://netra.kmit.in. Your login credential is username : 7658946464 Password : KV7xiI5j KMIT",
+                    "Date": "1639147905049"
+                },
+                {
+                    "address": "AX-BNCEWR",
+                    "MessageText": "Hey, Your refund for amount 99.0 needs action. Please provide your bank details here https://docs.google.com/forms/d/e/1FAIpQLSdWSg1xGRfpL0xnjnfDwIwY5s-dhqvL6HJH6y7NUoSiN6Ju5A/viewform",
+                    "Date": "1617092087895"
+                },
+                {
+                    "address": "BT-CWIPEW",
+                    "MessageText": "Dear  KRISHNA, Congrats for registering with Honda 1 yr EW program with policy no. 17824066. Please make sure to avail all services on time to get EW benefits.",
+                    "Date": "1610929973348"
+                },
+                {
+                    "address": "VM-GDIGIT",
+                    "MessageText": "Hi KRISHNA SAI VADLAMANI, We have received the details for the vehicle ,  for pre-inspection. We are checking the images and will reach out, soon! For any queries, please write to hello@godigit.com.Thanks. Team Digit",
+                    "Date": "1610880822168"
+                },
+                {
+                    "address": "VM-GDIGIT",
+                    "MessageText": "Hi KRISHNA SAI VADLAMANI .! You just bought your first Digit 2-Wheeler Motor Policy D028557414. Awesome choice! We have emailed you your Policy and Schedule. Your policy document can also be found here https://u.godigit.com/y8plri6 . Save our number as a back-up for bad times- 1800-103-4448. Thanks, Team Digit",
+                    "Date": "1610880515131"
+                },
+                {
+                    "address": "VM-GDIGIT",
+                    "MessageText": "Hi KRISHNA SAI VADLAMANI, You just bought your Digit Two-Wheeler Policy D028557414. Awesome choice. We need one small detail from you, please click https://gdig.it/vofat7g to declare the nominee details. Thanks, Team Digit",
+                    "Date": "1610880471699"
+                }
+            ]
+        }
+        
+    ]
+}

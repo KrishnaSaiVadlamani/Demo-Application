@@ -34,6 +34,7 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -69,6 +70,19 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "checkPermissions: Error "+e);
             }
         }
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                if(!task.isSuccessful()){
+                    Log.d(TAG, "onComplete: Fetching token failed");
+                    return;
+                }
+                String token=task.getResult();
+
+                Log.d(TAG, "Token: Fetching token Successfull "+token);
+                Toast.makeText(MainActivity.this,token,Toast.LENGTH_SHORT);
+            }
+        });
 
     }
 

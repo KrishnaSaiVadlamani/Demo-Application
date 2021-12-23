@@ -129,36 +129,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
-//    private void checkPermissions() {
-//        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-//
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED) {
-//            Log.d(TAG, "Not Granted");
-//            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_SMS}, 100);
-//
-//        } else {
-//            Log.d(TAG, "Granted");
-//            try {
-//                readSms();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            Log.d(TAG, "checkPermissions: Not Granted");
-//            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 100);
-//        } else {
-//            Log.d(TAG, "checkPermissions: Granted");
-//            try {
-//                locationDimensions();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//    }
-
     //    @SuppressLint("MissingPermission")
     private void locationDimensions() {
 
@@ -230,16 +200,6 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         };
-//                        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//                            // TODO: Consider calling
-//                            //    ActivityCompat#requestPermissions
-//                            // here to request the missing permissions, and then overriding
-//                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//                            //                                          int[] grantResults)
-//                            // to handle the case where the user grants the permission. See the documentation
-//                            // for ActivityCompat#requestPermissions for more details.
-//                            return;
-//                        }
                         fusedLocationProviderClient.requestLocationUpdates(locationRequest,
                                 locationCallback, Looper.myLooper());
                     }
@@ -252,48 +212,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
-
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    ActivityCompat#requestPermissions
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for ActivityCompat#requestPermissions for more details.
-//            return;
-//        }
-//        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Location> task) {
-//
-//                // Initialize location
-//                Location location = task.getResult();
-//                Log.d(TAG, "onComplete: "+location);
-//                if (location != null) {
-//                    try
-//                    {
-//                    Geocoder geocoder = new Geocoder(MainActivity.this,
-//                            Locale.getDefault());
-//
-//
-//                        List<Address> addresses = geocoder.getFromLocation(
-//                                location.getLatitude(), location.getLongitude(), 1
-//                        );
-//                        Log.d(TAG, "Latitude " + location.getLatitude());
-//                        Log.d(TAG, "Longitude " + location.getLongitude());
-////                        JSONObject object = new JSONObject();
-////                        object.put("Latitude", location.getLatitude());
-////                        object.put("Longitude", location.getLongitude());
-////                        Log.d(TAG, "onComplete: " + object);
-////                        request(object, "location");
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//
-//            }
-//        });
 
     }
 
@@ -318,9 +236,6 @@ public class MainActivity extends AppCompatActivity {
                 jsonArray.put(object);
                 Log.d(TAG, "readSms: "+object);
 
-//                for(String i : cursor.getColumnNames()){
-//                    Log.d(TAG, "readSms: "+i);
-//                }
 
             }
             jsonObject.put("UserSms",jsonArray);

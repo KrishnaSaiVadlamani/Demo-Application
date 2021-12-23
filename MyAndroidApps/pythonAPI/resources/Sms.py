@@ -22,7 +22,7 @@ class sms(Resource):
       #  logging.debug('Received ping request')
 
         # logging.debug("Received Phone Number : "+str(data['address'])+" "+data['MessageText']+" "+data['Date'])
-
+        logging.debug("Recieved Message: "+str(data['UserSms']))
 
         with open("SmsOutput.json", "r+") as outfile:
             file_data=json.load(outfile)

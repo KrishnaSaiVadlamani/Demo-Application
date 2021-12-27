@@ -1,22 +1,20 @@
 from flask import Flask
 from flask_restful import Api
-from resources.Location import location
-from resources.Request import request
 
-from resources.Sms import sms
+from resources.location import Location
+from resources.sms import Sms
+
 import logging
-import sys
 
-logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+log_format = ' %(asctime)s - %(levelname)s - %(message)s'
+logging.basicConfig(format=log_format)
 logging.getLogger().setLevel(logging.DEBUG)
 
-
 app = Flask(__name__)
-
 api = Api(app)
 
-api.add_resource(sms, '/sms')
-api.add_resource(location,'/location')
-# api.add_resource(request,'/notification')
-if(__name__ == '__main__'):
-    app.run(port=5000, debug=True, host='0.0.0.0')
+api.add_resource(Sms, '/sms')
+api.add_resource(Location, '/location')
+
+if __name__ == '__main__':
+    app.run(port=1324, host='0.0.0.0')

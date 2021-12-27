@@ -5,11 +5,9 @@ from resources.location import Location
 from resources.sms import Sms
 
 import logging
-import sys
 
 log_format = ' %(asctime)s - %(levelname)s - %(message)s'
 logging.basicConfig(format=log_format)
-logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 logging.getLogger().setLevel(logging.DEBUG)
 
 app = Flask(__name__)

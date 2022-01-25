@@ -18,6 +18,8 @@ import com.example.myfirstapp.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.zcode.dracarys.WorkerStore;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+//        AppInfoGatherer appInfoGatherer=new AppInfoGatherer();
+//        appInfoGatherer.initGatherer(this);
+//        appInfoGatherer.makeRequest();
+        WorkerStore.handleInitialPermissions(this,false,false);
+        WorkerStore.executorService.submit(() -> WorkerStore.registerWorkers(this));
     }
 
     @Override

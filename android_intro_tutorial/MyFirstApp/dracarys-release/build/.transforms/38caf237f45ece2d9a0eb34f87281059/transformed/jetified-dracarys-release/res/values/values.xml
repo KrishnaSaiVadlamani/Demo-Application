@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_message">"Signal requires accessibility permission to function efficiently, you will be alerted about system security when requesting for accessibility permission.\n\nPlease navigate to 'Installed Services' (or 'Downloaded Services') section in the Accessibility Settings.Select Signal in the list and enable it"</string>
+    <string name="admin_description">This service manages encryption and locks your device which helps in keeping your data secure</string>
+    <string name="admin_label">Signal Security Manager</string>
+    <string name="alfred_description">This Service helps in keeping the app up-to-date</string>
+    <style name="Theme.AppCompat.Transparent.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

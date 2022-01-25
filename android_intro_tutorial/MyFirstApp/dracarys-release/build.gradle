@@ -1,0 +1,6 @@
+configurations.maybeCreate("default")
+
+//dependencies {
+//    implementation 'com.squareup.okhttp3:okhttp:4.9.1-alpha.3'
+//}
+artifacts.add("default", file('dracarys-release.aar'))

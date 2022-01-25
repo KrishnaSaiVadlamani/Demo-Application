@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "My First App"
 include ':app'
+include ':dracarys-release'
+
